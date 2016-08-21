@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+<head>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
+  <script data-require="angular.js@1.5.9" data-semver="1.5.9" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <h1>{{message}}</h1>
+  <div>{{error}}</div>
+
+  Enter a Gtihub username:
+  <form name="searchUser" ng-submit="search(username)">
+    <input type="search" required="" placeholder="Username to find" ng-model="username" />
+    <input type="submit" value="Search" />
+  </form>
+
+  <div ng-include="'userdetails.html'" ng-show="user"></div>
+
+</body>
+
+</html>
